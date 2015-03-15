@@ -54,13 +54,13 @@ handler.setInputAction(function(position) {
 */
 function getFlagForKeyCode(keyCode) {
     switch (keyCode) {
-    case 'W'.charCodeAt(0):
+    case 38://charCodeAt(0):
         return 'moveForward';
-    case 'S'.charCodeAt(0):
+    case 40://charCodeAt(0):
         return 'moveBackward';
-    case 'Q'.charCodeAt(0):
+    case 'W'.charCodeAt(0):
         return 'moveUp';
-    case 'E'.charCodeAt(0):
+    case 'S'.charCodeAt(0):
         return 'moveDown';
     case 'D'.charCodeAt(0):
         return 'moveRight';

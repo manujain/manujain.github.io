@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cesium Starter App</title>
+   <!-- Use correct character set. -->
+<meta charset="utf-8">
+<!-- Tell IE to use the latest, best version (or Chrome Frame if pre-IE11). -->
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Manu's cesium app</title>
   <script src="ThirdParty/Cesium/Cesium.js"></script>
   <style>
       @import url(ThirdParty/Cesium/Widgets/widgets.css);
       html, body, #cesiumContainer {
-          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+          width: 100%; height: 95%; margin: 0; padding: 0;
       }
   </style>
 </head>
 <body>
   <div id="cesiumContainer"></div>
+  <div style="word-spacing: 20px;">KeyboardControls- w/s->moveUp/Down, a/d->moveLeft/Right, upArrow/downArrow->moveForward/Backward
+  </div>
+  <div>Terrain feature added. Type "Death Valley in search box". "Ctrl + left mouse drag" to see terrains.
   <script src="Source/App.js"></script>
 </body>
 </html>
