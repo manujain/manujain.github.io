@@ -19,10 +19,10 @@ canvas.onclick = function() {
 var ellipsoid = scene.globe.ellipsoid;
 
 // disable the default event handlers
-scene.screenSpaceCameraController.enableRotate = false;
+scene.screenSpaceCameraController.enableRotate = true;
 scene.screenSpaceCameraController.enableTranslate = false;
 scene.screenSpaceCameraController.enableZoom = false;
-scene.screenSpaceCameraController.enableTilt = false;
+scene.screenSpaceCameraController.enableTilt = true;
 scene.screenSpaceCameraController.enableLook = false;
 
 var startMousePosition;
@@ -39,7 +39,7 @@ var flags = {
 
 var handler = new Cesium.ScreenSpaceEventHandler(canvas);
 
-handler.setInputAction(function(movement) {
+/*handler.setInputAction(function(movement) {
     flags.looking = true;
     mousePosition = startMousePosition = Cesium.Cartesian3.clone(movement.position);
 }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
@@ -51,7 +51,7 @@ handler.setInputAction(function(movement) {
 handler.setInputAction(function(position) {
     flags.looking = false;
 }, Cesium.ScreenSpaceEventType.LEFT_UP);
-
+*/
 function getFlagForKeyCode(keyCode) {
     switch (keyCode) {
     case 'W'.charCodeAt(0):
@@ -88,7 +88,7 @@ document.addEventListener('keyup', function(e) {
 cesiumWidget.clock.onTick.addEventListener(function(clock) {
     var camera = cesiumWidget.camera;
 
-    if (flags.looking) {
+    /*if (flags.looking) {
         var width = canvas.clientWidth;
         var height = canvas.clientHeight;
 
@@ -99,7 +99,7 @@ cesiumWidget.clock.onTick.addEventListener(function(clock) {
         var lookFactor = 0.05;
         camera.lookRight(x * lookFactor);
         camera.lookUp(y * lookFactor);
-    }
+    }*/
 
     // Change movement speed based on the distance of the camera to the surface of the ellipsoid.
     var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
